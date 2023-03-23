@@ -3,3 +3,4 @@ node_modules
 pixijs
 .DS_Store
 .history
+.npmrc

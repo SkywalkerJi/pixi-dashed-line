@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 /** Define the dash: [dash length, gap size, dash size, gap size, ...] */
-export declare type Dashes = number[];
+export type Dashes = number[];
 export interface DashLineOptions {
     dash?: Dashes;
     width?: number;
@@ -49,6 +49,7 @@ export declare class DashLine {
     lineTo(x: number, y: number, closePath?: boolean): this;
     closePath(): void;
     drawCircle(x: number, y: number, radius: number, points?: number, matrix?: PIXI.Matrix): this;
+    arc(cx: number, cy: number, radius: number, startAngle: number, endAngle: number, points?: number): this;
     drawEllipse(x: number, y: number, radiusX: number, radiusY: number, points?: number, matrix?: PIXI.Matrix): this;
     drawPolygon(points: PIXI.Point[] | number[], matrix?: PIXI.Matrix): this;
     drawRect(x: number, y: number, width: number, height: number, matrix?: PIXI.Matrix): this;

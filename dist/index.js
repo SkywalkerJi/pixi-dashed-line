@@ -185,6 +185,22 @@ var DashLine = /** @class */ (function () {
         }
         return this;
     };
+    DashLine.prototype.arc = function (cx, cy, radius, startAngle, endAngle, points) {
+        if (points === void 0) { points = 80; }
+        var interval = (endAngle - startAngle) / points;
+        var angle = startAngle;
+        for (var i = 0; i < points + 1; i++) {
+            var next = [cx + Math.cos(angle) * radius, cy + Math.sin(angle) * radius];
+            if (i === 0) {
+                this.moveTo(next[0], next[1]);
+            }
+            else {
+                this.lineTo(next[0], next[1]);
+            }
+            angle += interval;
+        }
+        return this;
+    };
     DashLine.prototype.drawEllipse = function (x, y, radiusX, radiusY, points, matrix) {
         if (points === void 0) { points = 80; }
         var interval = Math.PI * 2 / points;
